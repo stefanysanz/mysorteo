@@ -1,7 +1,7 @@
 {
   "name": "mysorteo",
   "version": "1.0.0",
-  "description": "",
+  "description": "project stub: must have all basic elements create front end with react and back end with node display \"hello world\" on front end & receive status OK json make hittable from heroku",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -24,10 +24,15 @@
   },
   "homepage": "https://github.com/stefanysanz/mysorteo#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.12"
-  }
+    "mongoose": "^5.11.12",
+    "passport-local-mongoose": "^6.1.0",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {}
 }

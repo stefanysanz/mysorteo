@@ -1,3 +1,3 @@
 module.exports = {
-  // models here
+ User: require('./User.js')
 }
