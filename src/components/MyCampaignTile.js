@@ -15,6 +15,7 @@ class MyCampaignTile extends Component {
                             <CampaignTileDetail title="ID" value={this.props.id}/>
                             <CampaignTileDetail title="Start Date" value={this.props.startDate}/>
                             <CampaignTileDetail title="End Date" value={this.props.endDate}/>
+                            <CampaignTileDetail title="Winner" value="John Smith"/>
                         </div>
                         <div className="campaign-tile-btns">
                             <CampaignTileBtn label="Edit" pos="left"/>
