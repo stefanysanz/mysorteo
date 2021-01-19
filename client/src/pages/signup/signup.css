@@ -1,0 +1,31 @@
+body {
+  background: aqua;
+}
+
+#signUpCard {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 450px;
+  height: 650px;
+  background-color: white;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#logoSignIn {
+  width: 250px;
+  height: 100px;
+}
+
+#xBtn {
+  position: absolute;
+  top: 2;
+  bottom: 3;
+  left: 2;
+  right: 0;
+}
