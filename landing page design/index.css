@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: rgb(228, 157, 236);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+  color: aliceblue;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links{
+  display: flex;
+  background-color: rgb(228, 157, 236);
+  justify-content: space-around;
+  width: 35%;
+}
+
+.nav-links li{
+  list-style: none;
+}
+
+.nav-links a{
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  color: rgb(235, 57, 220);
+  line-height: 1.6;
+}
+
+#showcase{
+  background-image:url('./img/showcase.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding:0 20px;
+}
+
+#showcase h1{
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+#showcase p{
+  font-size: 20px;
+}
+
+#showcase .button{
+  font-size: 18px;
+  text-decoration:none;
+  color: rgb(235, 57, 220);
+  border: rgb(235, 57, 220) 1px solid;
+  padding: 10px 20px;
+  border-radius:10 px;
+  margin-top: 20 px;
+}
+
+#showcase .button:hover{
+  background: aqua;
+  color: rgb(235, 57, 220)
+}
+
+#section-a{
+  padding: 20px;
+  background: gold;
+  color: black;
+  text-align: center;
+}
+
+#section-b{
+  padding: 20px;
+  background: purple;
+  color: black;
+  text-align: center;
+}
+
+#section-c{
+  display: flex;
+  background: #474e4d;
+  color: white;
+  text-align: center;
+}
+
+#section-c div{
+  padding: 20px;
+}
+
+#section-c .box-1, #section c .box-3{
+  background: chartreuse;
+  color: brown;
+}
+
+#section-c .box-2{
+  background: burlywood;
+}
+
+#author {
+  background: #474e4d;
+  color: white;
+  text-align: center;
+}
