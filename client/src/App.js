@@ -7,6 +7,7 @@ import myCampaigns from './pages/myCampaigns';
 import myEntries from './pages/myEntries';
 import signIn from './pages/signin/signin.js'
 import signUp from './pages/signup/signup.js'
+import campaignForm from './pages/campaignform/campaign.js'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path='/myCampaigns' component={myCampaigns} />
           <Route path='/myEntries' component={myEntries} />
           <Route path='/signIn' component={signIn} />
-          <Route path='/signUp' components={signUp} />
+          <Route path='/signUp' component={signUp} />
+          <Route path='/campaignForm' component={campaignForm} />
         </Switch>
       </Router>
     </>
