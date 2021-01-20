@@ -7,7 +7,7 @@ import './campaign.css'
 function campaignForm() {
   return (
     <>
-      
+
       <div id="campaignWrap">
         <h1>Campaign Form</h1>
         <br></br>
@@ -36,6 +36,7 @@ function campaignForm() {
                 <MenuItem id='twitterTag' onClick={popupState.close}>Twitter</MenuItem>
                 <MenuItem id='twitchTag' onClick={popupState.close}>Twitch</MenuItem>
                 <MenuItem id='facebookTag' onClick={popupState.close}>Facebook</MenuItem>
+                <MenuItem id='facebookTag' onClick={popupState.close}>Snapchat</MenuItem>
                 <MenuItem id='otherTag' onClick={popupState.close}>Other</MenuItem>
               </Menu>
             </React.Fragment>
@@ -43,11 +44,11 @@ function campaignForm() {
         </PopupState>
         <br></br>
         <br></br>
-        <TextField label="Handle..." value="@" id="campaignHandle" />
+        <TextField label="Handle..." id="campaignHandle" />
         <br></br>
         <br></br>
         <Button variant="outlined" color="primary" id="campaignSubmit">Submit</Button>
-        
+
       </div>
     </>)
 
