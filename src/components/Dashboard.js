@@ -16,7 +16,14 @@ class Dashboard extends Component {
         this.myEntries = React.createRef();
         this.state = {
             active: false,
+            showHide: "dashboard-hide",
         }
+    }
+
+    show() {
+        this.setState({
+            showHide:"landing-show",
+        });
     }
 
     render() {
@@ -30,7 +37,6 @@ class Dashboard extends Component {
                 // Transition out the current btn
                 if (currBtn.name !== "") {
                     currBtn.out();
-                    
                 }
 
                 // Hide the current dashboard
@@ -58,7 +64,7 @@ class Dashboard extends Component {
         }
 
         return (
-            <div className="dashboard-container">
+            <div className={this.state.showHide}>
                 <div className="dashboard-menu">
                     <img className="dashboard-logo" src={logo} alt="logo"></img>
                     <DashboardMenuBtn name="profile" label="Profile" icon={profileIcon} updateDashboard={update}/>
