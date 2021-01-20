@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 import '../assets/css/landing.css';
-import '../assets/css/sign-in.css';
 import bg from '../assets/images/landing.jpg';
 import logo from '../assets/images/dashboard/logo.svg'
 import LandingMenuBtn from './LandingMenuBtn';
-import SignIn from './SignIn';
 
 class Landing extends Component {
     constructor(props) {
         super(props);
-        this.signIn = React.createRef();
         this.state = {
             active: true,
             showHide: "landing-show",
         }
     }
 
-    hide() {
+    hide = () => {
         this.setState({
             showHide:"landing-hide",
         });
@@ -26,7 +23,7 @@ class Landing extends Component {
         const showPage = (page) => {
             switch (page) {
                 case "sign-in":
-                    this.signIn.current.show();
+                    this.props.showSignIn();
                     break;
                 default:
             }
@@ -34,7 +31,6 @@ class Landing extends Component {
 
         return (
             <div className={this.state.showHide}>
-                <SignIn ref={this.signIn} logo={logo} showDashboard={this.props.showDashboard} />
                 <div className="landing-header">
                     <img className="landing-logo" src={logo} alt="sorteo" />
                     <div className="landing-menu">
