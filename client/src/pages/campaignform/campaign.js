@@ -31,12 +31,12 @@ function campaignForm() {
                 Platform
       </Button>
               <Menu {...bindMenu(popupState)}>
-                <MenuItem onClick={popupState.close}>Instagram</MenuItem>
-                <MenuItem onClick={popupState.close}>YouTube</MenuItem>
-                <MenuItem onClick={popupState.close}>Twitter</MenuItem>
-                <MenuItem onClick={popupState.close}>Twitch</MenuItem>
-                <MenuItem onClick={popupState.close}>Facebook</MenuItem>
-                <MenuItem onClick={popupState.close}>Other</MenuItem>
+                <MenuItem id='instaTag' onClick={popupState.close}>Instagram</MenuItem>
+                <MenuItem id='youtubeTag' onClick={popupState.close}>YouTube</MenuItem>
+                <MenuItem id='twitterTag' onClick={popupState.close}>Twitter</MenuItem>
+                <MenuItem id='twitchTag' onClick={popupState.close}>Twitch</MenuItem>
+                <MenuItem id='facebookTag' onClick={popupState.close}>Facebook</MenuItem>
+                <MenuItem id='otherTag' onClick={popupState.close}>Other</MenuItem>
               </Menu>
             </React.Fragment>
           )}
