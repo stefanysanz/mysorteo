@@ -93,8 +93,8 @@
 
 .campaign-tile-detail-title {
     float: left;
-    font-size: 16px;
-    font-family: "BebasRegular";
+    font-size: 12px;
+    font-family: "GothamRounded-Medium";
 }
 
 .campaign-tile-detail-value {
