@@ -10,13 +10,9 @@ const Campaign = new Schema({
     required: true
   },
   value: {
-    type: Number,
+    type: String,
     require: true
-  },
-  user: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }]
+  }
 }, { timestamps: true })
 
 module.exports = model('Campaign', Campaign)
