@@ -8,6 +8,9 @@ class SignUp extends Component {
         super(props);
         this.state = {
             showHide: "sign-in-hide",
+            displayName: "",
+            email: "",
+            password: "",
         }
     }
 
@@ -28,16 +31,24 @@ class SignUp extends Component {
         const signUp = (e) => {
             // Validate input
 
-            // Verify email and password
-            axios.post('http://localhost:8000/api/sign-in', {
-                email: "a@abc.com",
-                password: "123",
-            })
-                .then(function (res) {
-                console.log(res);
-            })
+            // Check if user exists
 
-            // Handle success
+            // Create user
+            axios.post('http://localhost:3001/api/users', {
+                display_name: this.state.displayName,
+                email: this.state.email,
+                password: this.state.password,
+            })
+            .then((res) => {
+                console.log(res);
+                showDashboard()
+            })
+            .catch((res) => {
+                console.log(res)
+            })
+        }
+
+        const showDashboard = () => {
             // Hide sign-in
             this.setState({
                 showHide:"sign-in-hide",
@@ -47,16 +58,32 @@ class SignUp extends Component {
             this.props.showDashboard();
         }
 
+        const updateDisplayName = (e) => {
+            this.setState({
+                displayName: e.target.value,
+            });
+        }
+        const updateEmail = (e) => {
+            this.setState({
+                email: e.target.value,
+            });
+        }
+        const updatePassword = (e) => {
+            this.setState({
+                password: e.target.value,
+            });
+        }
+
         return (
             <div className={this.state.showHide}>
                 <div className="sign-up-container">
                     <img className="sign-in-logo" src={logo} alt="sorteo" />
                     <div className="sign-in-inputs">
-                        <input className="sign-in-input" placeholder="display name" type="text" />
+                        <input className="sign-in-input" placeholder="display name" type="text" onChange={updateDisplayName} />
                         <div className="sign-in-input-spacer"></div>
-                        <input className="sign-in-input" placeholder="email" type="text" />
+                        <input className="sign-in-input" placeholder="email" type="text" onChange={updateEmail} />
                         <div className="sign-in-input-spacer"></div>
-                        <input className="sign-in-input" placeholder="password" type="password" />
+                        <input className="sign-in-input" placeholder="password" type="password" onChange={updatePassword} />
                         <div className="sign-in-input-spacer"></div>
                         <input className="sign-in-input" placeholder="verify password" type="password" />
                     </div>
