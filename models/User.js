@@ -14,10 +14,10 @@ const User = new Schema({
     required: true,
     unique: true
   },
-  passwordHash: {
+  password: {
     type: String,
     required: true,
-    ref: 'password_hash'
+    ref: 'password'
   },
   campaigns: [{
     type: Schema.Types.ObjectId.get,
