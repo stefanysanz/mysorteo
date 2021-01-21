@@ -3,7 +3,7 @@ import '../assets/css/sign-in.css';
 import axios from 'axios';
 import logo from '../assets/images/dashboard/logo-white-blue.svg'
 
-class SignIn extends Component {
+class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,7 @@ class SignIn extends Component {
 
     render() {
 
-        const signIn = (e) => {
+        const signUp = (e) => {
             // Validate input
 
             // Verify email and password
@@ -49,14 +49,18 @@ class SignIn extends Component {
 
         return (
             <div className={this.state.showHide}>
-                <div className="sign-in-container">
+                <div className="sign-up-container">
                     <img className="sign-in-logo" src={logo} alt="sorteo" />
                     <div className="sign-in-inputs">
+                        <input className="sign-in-input" placeholder="display name" type="text" />
+                        <div className="sign-in-input-spacer"></div>
                         <input className="sign-in-input" placeholder="email" type="text" />
                         <div className="sign-in-input-spacer"></div>
                         <input className="sign-in-input" placeholder="password" type="password" />
+                        <div className="sign-in-input-spacer"></div>
+                        <input className="sign-in-input" placeholder="verify password" type="password" />
                     </div>
-                    <div className="sign-in-btn" onClick={signIn}>Sign-In</div>
+                    <div className="sign-in-btn" onClick={signUp}>Sign-Up</div>
                 </div>
                 <div className="sign-in-exit-btn" onClick={this.hide}></div>
             </div>
@@ -64,4 +68,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default SignUp;

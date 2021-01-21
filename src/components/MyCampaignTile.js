@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CampaignTileDetail from './CampaignTileDetail';
-import CampaignTileBtn from './CampaignTileBtn';
+import TxtBtn from './TxtBtn';
 
 class MyCampaignTile extends Component {
     render() {
@@ -18,8 +18,8 @@ class MyCampaignTile extends Component {
                             <CampaignTileDetail title="Winner" value="John Smith"/>
                         </div>
                         <div className="campaign-tile-btns">
-                            <CampaignTileBtn label="Edit" pos="left"/>
-                            <CampaignTileBtn label="View" pos="right"/>
+                            <TxtBtn label="Edit" classMod="left" />
+                            <TxtBtn label="View" classMod="right" />
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import profileIcon from '../assets/images/dashboard/profile.svg';
-import entriesIcon from '../assets/images/dashboard/entries.svg';
-import logoutIcon from '../assets/images/dashboard/logout.svg';
-import myCampaignsIcon from '../assets/images/dashboard/my-campaigns.svg';
-import logo from '../assets/images/dashboard/logo.svg'
-import '../assets/css/dashboard.css';
-import DashboardMenuBtn from './DashboardMenuBtn';
+import logo from '../assets/images/dashboard/logo-gray-blue.svg'
+import TxtBtn from './TxtBtn';
 import MyCampaigns from './MyCampaigns';
 import MyEntries from './MyEntries';
+import '../assets/css/dashboard.css';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -15,68 +11,64 @@ class Dashboard extends Component {
         this.myCampaigns = React.createRef();
         this.myEntries = React.createRef();
         this.state = {
-            active: false,
             showHide: "dashboard-hide",
         }
     }
 
-    show() {
+    show = () => {
         this.setState({
-            showHide:"landing-show",
+            showHide:"dashboard-show",
+        });
+    }
+
+    hide = () => {
+        this.setState({
+            showHide:"dashboard-hide",
         });
     }
 
     render() {
-        let currBtn = {
-            name: "",
-        }
+
         let currDashboard;
 
-        const update = (newBtn) => {
-            if (currBtn.name !== newBtn.name) {
-                // Transition out the current btn
-                if (currBtn.name !== "") {
-                    currBtn.out();
-                }
-
-                // Hide the current dashboard
-                if (currDashboard !== undefined) {
-                    currDashboard.hide();
-                }
-
-                // Update the current btn
-                currBtn = newBtn;
-                
-                // Show the new dashboard
-                switch (newBtn.name) {
-                    case "my-campaigns":
-                        currDashboard = this.myCampaigns.current;
-                        this.myCampaigns.current.show();
-                        break;
-                    case "my-entries":
-                        currDashboard = this.myEntries.current;
-                        this.myEntries.current.show()
-                        break;
-                    default:
-                        console.log("invalid btn name");
-                }
+        const showDashboard = (btnLabel) => {
+            if (currDashboard !== undefined) {
+                currDashboard.current.hide();
+            }
+            switch (btnLabel) {
+                case "my campaigns":
+                    currDashboard = this.myCampaigns;
+                    currDashboard.current.show();
+                    break;
+                case "my entries":
+                    currDashboard = this.myEntries;
+                    currDashboard.current.show();
+                    break;
+                case "log-out":
+                    this.props.showLanding();
+                    break;
+                default:
             }
         }
 
         return (
             <div className={this.state.showHide}>
-                <div className="dashboard-menu">
-                    <img className="dashboard-logo" src={logo} alt="logo"></img>
-                    <DashboardMenuBtn name="profile" label="Profile" icon={profileIcon} updateDashboard={update}/>
-                    <DashboardMenuBtn name="my-campaigns" label="My Campaigns" icon={myCampaignsIcon} updateDashboard={update}/>
-                    <DashboardMenuBtn name="my-entries" label="My Entries" icon={entriesIcon} updateDashboard={update}/>
-                    <DashboardMenuBtn name="logout" label="Log Out" icon={logoutIcon} updateDashboard={update}/>
-                </div>
-                <div className="dashboard-subcontainer">
-                    <div className="dashboard-content">
-                        <MyCampaigns ref={this.myCampaigns}/>
-                        <MyEntries ref={this.myEntries}/>
+                <div className="dashboard-header">
+                    <div className="left">
+                        <img className="dashboard-logo" src={logo} alt="sorteo" />
+                        <TxtBtn label="My Campaigns" classMod="left ml20" click={showDashboard} />
+                        <TxtBtn label="My Entries" classMod="left ml20" click={showDashboard} />
                     </div>
+                    <div className="right">
+                        <TxtBtn label="Log-Out" classMod="left ml20" click={showDashboard} />
+                        <div className="dashboard-profile-btn">
+                            <div className="dashboard-profile-btn-initials">P</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="dashboard-content">
+                    <MyCampaigns ref={this.myCampaigns} />
+                    <MyEntries ref={this.myEntries} />
                 </div>
             </div>
         );

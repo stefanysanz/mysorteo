@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import '../assets/css/landing.css';
 import bg from '../assets/images/landing.jpg';
-import logo from '../assets/images/dashboard/logo.svg'
-import LandingMenuBtn from './LandingMenuBtn';
+import logo from '../assets/images/dashboard/logo-white-blue.svg'
+import TxtBtn from './TxtBtn';
 
 class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: true,
             showHide: "landing-show",
         }
+    }
+
+    show = () => {
+        this.setState({
+            showHide:"landing-show",
+        });
     }
 
     hide = () => {
@@ -20,8 +25,14 @@ class Landing extends Component {
     }
 
     render() {
-        const showPage = (page) => {
-            switch (page) {
+        const showPage = (btnLabel) => {
+            switch (btnLabel) {
+                case "about":
+                    this.props.showAbout();
+                    break;
+                case "sign-up":
+                    this.props.showSignUp();
+                    break;
                 case "sign-in":
                     this.props.showSignIn();
                     break;
@@ -34,9 +45,9 @@ class Landing extends Component {
                 <div className="landing-header">
                     <img className="landing-logo" src={logo} alt="sorteo" />
                     <div className="landing-menu">
-                        <LandingMenuBtn label="About" showPage={showPage} />
-                        <LandingMenuBtn label="How-It-Works" showPage={showPage} />
-                        <LandingMenuBtn label="Sign-In" showPage={showPage} />
+                        <TxtBtn label="About" classMod="left ml20" click={showPage} />
+                        <TxtBtn label="Sign-In" classMod="left ml20" click={showPage} />
+                        <TxtBtn label="Sign-Up" classMod="left ml20" click={showPage} />
                     </div>
                 </div>
                 <div className="landing-copy">
