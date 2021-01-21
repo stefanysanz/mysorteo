@@ -25,14 +25,17 @@
   "homepage": "https://github.com/stefanysanz/mysorteo#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "axios": "^0.21.1",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.12",
+    "mongoose": "^5.11.13",
     "passport-local-mongoose": "^6.1.0",
     "react-icons": "^4.1.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "reactstrap": "^8.8.1"
   },
   "devDependencies": {}
 }

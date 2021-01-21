@@ -1,0 +1,18 @@
+.profilepic {
+  height: 100px;
+  width: 100px;
+}
+
+.uploadBtn {
+  background-color: rgb(238, 0, 210);
+  border-style: double;
+  border-width: 4px;
+  border-color: black;
+}
+
+.editPasswordBtn {
+  background-color: rgb(52, 179, 247);
+  border-style: double;
+  border-width: 4px;
+  border-color: black;
+}

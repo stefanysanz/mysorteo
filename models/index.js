@@ -1,3 +1,5 @@
 module.exports = {
- User: require('./User.js')
+  User: require('./User'),
+  Campaign: require('./Campaign'),
+  Entry: require('./Entry')
 }
