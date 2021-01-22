@@ -1,0 +1,24 @@
+@font-face {
+    font-family: GothamRounded-Book;
+    src: url(./assets/fonts/GothamRounded-Book.woff);
+}
+
+@font-face {
+    font-family: GothamRounded-Bold;
+    src: url(./assets/fonts/GothamRounded-Bold.woff);
+}
+
+@font-face {
+    font-family: GothamRounded-Light;
+    src: url(./assets/fonts/GothamRounded-Light.woff);
+}
+
+@font-face {
+    font-family: GothamRounded-Medium;
+    src: url(./assets/fonts/GothamRounded-Medium.woff);
+}
+
+@font-face {
+    font-family: BebasRegular;
+    src: url(./assets/fonts/BebasRegular.woff);
+}

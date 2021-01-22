@@ -1,18 +1,36 @@
-.profilepic {
-  height: 100px;
-  width: 100px;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
-.uploadBtn {
-  background-color: rgb(238, 0, 210);
-  border-style: double;
-  border-width: 4px;
-  border-color: black;
+body, html {
+  width: 100vw;
+  height: 100vh;
 }
 
-.editPasswordBtn {
-  background-color: rgb(52, 179, 247);
-  border-style: double;
-  border-width: 4px;
-  border-color: black;
+.App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.sorteo-blue {
+  color: #05b7f1;
 }
