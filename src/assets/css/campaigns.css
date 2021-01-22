@@ -29,12 +29,22 @@
     margin-left: 300px;
 }
 
-.mycampaigns-list {
+.mycampaigns-list-show {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    opacity: 1;
+}
+
+.mycampaigns-list-hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    opacity: 0;
 }
 
 .mycampaigns-list-tiles {
@@ -101,4 +111,53 @@
     float: right;  
     font-size: 12px;
     font-family: "GothamRounded-book";
+}
+
+.mycampaigns-create-form {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.mycampaigns-create-form-input::placeholder {
+    color: #CCCCCC;
+}
+
+.mycampaigns-create-form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    outline: none;
+    font-family: "GothamRounded-Book";
+    font-size: 14px;
+    color: #999999;
+}
+
+.mycampaigns-create-form-textarea::placeholder {
+    color: #CCCCCC;
+}
+
+.mycampaigns-create-form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    resize: none;
+    outline: none;
+    height: 300px;
+    font-family: "GothamRounded-Book";
+    font-size: 14px;
+    color: #999999;
+}
+
+.mycampaigns-create-form-create-btn {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fc4ea7;
+    font-family: "BebasRegular";
+    font-size: 20px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
 }

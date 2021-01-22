@@ -18,8 +18,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "npm-run-all --parallel watch:server start:web",
     "start:web": "react-scripts start",
     "build": "react-scripts build",
@@ -45,6 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "heroku-run-build-script": true
+  }
 }

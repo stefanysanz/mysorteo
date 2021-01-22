@@ -35,7 +35,7 @@ class SignUp extends Component {
 
             // Create user
             axios.post('http://localhost:3001/api/users', {
-                display_name: this.state.displayName,
+                displayName: this.state.displayName,
                 email: this.state.email,
                 password: this.state.password,
             })
@@ -63,6 +63,7 @@ class SignUp extends Component {
                 displayName: e.target.value,
             });
         }
+
         const updateEmail = (e) => {
             this.setState({
                 email: e.target.value,

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import MyCampaignsCreate from './MyCampaignsCreate';
 import MyCampaignsList from './MyCampaignsList';
 import DashboardMenuBtn from './DashboardMenuBtn';
 import createIcon from '../assets/images/dashboard/create.svg';
@@ -8,6 +9,8 @@ import '../assets/css/campaigns.css';
 class MyCampaigns extends Component {
     constructor(props) {
         super(props);
+        this.myCampaignsCreate = React.createRef();
+        this.myCampaignsList = React.createRef();
         this.state = {
             containerClass: "campaigns hide",
         }
@@ -30,20 +33,30 @@ class MyCampaigns extends Component {
             label: "",
         }
 
+        let currDashboard;
+
         const updateDashboard = (btn) => {
             // Reset the current btn
             if (currBtn.label !== "") {
                 currBtn.reset();
             }
 
+            // Hide the current dashboard
+            if (currDashboard !== undefined) {
+                currDashboard.current.hide();
+            }
+
             // Update the dashboard
             switch (btn.label) {
                 case "create":
+                    currDashboard = this.myCampaignsCreate;
                     break;
                 case "view all":
+                    currDashboard = this.myCampaignsList;
                     break;
                 default:
             }
+            currDashboard.current.show();
 
             currBtn = btn;
         }
@@ -57,7 +70,8 @@ class MyCampaigns extends Component {
                     </div>
                 </div>
                 <div className="campaigns-content">
-                    <MyCampaignsList />
+                    <MyCampaignsCreate ref={this.myCampaignsCreate} />
+                    <MyCampaignsList ref={this.myCampaignsList} />
                 </div>
             </div>
         );

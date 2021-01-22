@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import '../assets/css/sign-in.css';
 import axios from 'axios';
 import logo from '../assets/images/dashboard/logo-white-blue.svg'
+import '../assets/css/sign-in.css';
 
 class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
             showHide: "sign-in-hide",
+            email: "",
+            password: "",
         }
     }
 
@@ -30,21 +32,34 @@ class SignIn extends Component {
 
             // Verify email and password
             axios.post('http://localhost:3001/api/sign-in', {
-                email: "a@abc.com",
-                password: "123",
+                email: this.state.email,
+                password: this.state.password,
             })
-                .then(function (res) {
+            .then(res => {
                 console.log(res);
-            })
 
-            // Handle success
-            // Hide sign-in
+                // TODO: check for errors and report to form
+
+                // Handle success
+                // Hide sign-in
+                this.setState({
+                    showHide:"sign-in-hide",
+                });
+
+                // Show dashboard
+                this.props.showDashboard();
+            }) 
+        }
+
+        const updateEmail = (e) => {
             this.setState({
-                showHide:"sign-in-hide",
+                email: e.target.value,
             });
-
-            // Show dashboard
-            this.props.showDashboard();
+        }
+        const updatePassword = (e) => {
+            this.setState({
+                password: e.target.value,
+            });
         }
 
         return (
@@ -52,9 +67,9 @@ class SignIn extends Component {
                 <div className="sign-in-container">
                     <img className="sign-in-logo" src={logo} alt="sorteo" />
                     <div className="sign-in-inputs">
-                        <input className="sign-in-input" placeholder="email" type="text" />
+                        <input className="sign-in-input" placeholder="email" type="text" onChange={updateEmail} />
                         <div className="sign-in-input-spacer"></div>
-                        <input className="sign-in-input" placeholder="password" type="password" />
+                        <input className="sign-in-input" placeholder="password" type="password" onChange={updatePassword} />
                     </div>
                     <div className="sign-in-btn" onClick={signIn}>Sign-In</div>
                 </div>
