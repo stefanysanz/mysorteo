@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "start:server": "node src/server",
     "watch:server": "nodemon --watch src/server src/server",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
