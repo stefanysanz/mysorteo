@@ -1,4 +1,4 @@
-const uri = "mongodb+srv://admin:admin@cluster0.wagrb.mongodb.net/?retryWrites=true&w=majority"
+const uri = process.env.MONGODB_URI;
 const MongoClient = require('mongodb').MongoClient
 MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
