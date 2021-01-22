@@ -29,7 +29,7 @@
     padding: 20px;
     clear: both;
     overflow: auto;
-    color: #CCCCCC;
+    color: #333333;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, .1);
 }
 
@@ -62,4 +62,38 @@
     font-family: "GothamRounded-Book";
     font-size: 12px;
     margin-top: 3px;
+}
+
+.dashboard-menu-btn-over {
+    clear: both;
+    overflow: auto;
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .05);
+    transition: background-color .25s;
+    transition-timing-function: ease-out;
+}
+
+.dashboard-menu-btn-out {
+    clear: both;
+    overflow: auto;
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .25s;
+    transition-timing-function: ease-out;
+}
+
+.dashboard-menu-btn-icon {
+    float: left;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.dashboard-menu-btn-label {
+    float: left;
+    font-family: "BebasRegular";
+    font-size: 20px;
+    margin-left: 10px;
+    color: #333333;
 }

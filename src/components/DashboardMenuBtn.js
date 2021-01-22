@@ -4,51 +4,53 @@ class DashboardMenuBtn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false,
-            btnClass: "dashboard-menuBtn",
+            active: true,
+            overOut: "dashboard-menu-btn-out",
         }
     }
 
     render() {
 
         const handleOver = (e) => {
-            if (!this.state.active) {
+            if (this.state.active) {
                 this.setState({
-                    btnClass:"dashboard-menuBtn dashboard-menuBtn-over",
+                    overOut:"dashboard-menu-btn-over",
                 });
             }
         }
     
         const handleOut = (e) => {
-            if (!this.state.active) {
-                out();
+            if (this.state.active) {
+                this.setState({
+                    overOut:"dashboard-menu-btn-out",
+                });
             }
         }
 
         const handleClick = (e) => {
-            if (!this.state.active) {
+            if (this.state.active) {
                 this.setState({
-                    active: true,
-                    btnClass:"dashboard-menuBtn dashboard-menuBtn-click",
+                    active: false,
+                    overOut:"dashboard-menu-btn-over",
                 });
                 this.props.updateDashboard({
-                    name: this.props.name,
-                    out: out,
+                    label: this.props.label.toLowerCase(),
+                    reset: reset,
                 });
             }
         }
 
-        const out = () => {
+        const reset = () => {
             this.setState({
-                active: false,
-                btnClass:"dashboard-menuBtn dashboard-menuBtn-out",
+                active: true,
+                overOut:"dashboard-menu-btn-out",
             });
         }
 
         return (
-            <div className={this.state.btnClass} onClick={handleClick} onMouseOver={handleOver} onMouseOut={handleOut}>
-                <img className="dashboard-menuBtn-icon"src={this.props.icon} alt={this.props.label}></img>
-                <div className="dashboard-menuBtn-label">{this.props.label}</div>
+            <div className={this.state.overOut} onClick={handleClick} onMouseEnter={handleOver} onMouseLeave={handleOut}>
+                <img className="dashboard-menu-btn-icon"src={this.props.icon} alt={this.props.label}></img>
+                <div className="dashboard-menu-btn-label">{this.props.label}</div>
             </div>
         );
     }
