@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+}
+
+.App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.sorteo-blue {
+  color: #05b7f1;
+}
